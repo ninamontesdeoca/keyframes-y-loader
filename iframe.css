@@ -1,0 +1,107 @@
+body {
+	background-color: lightblue;
+}
+
+/* keyframes anima por cuadro, uno por uno. 40 cuadros/segundo. como la peli viaje de mickey. Primero ponès: @keyframes propiedadAnimar {
+	estado inicial y
+	hasta donde va a ir
+} */
+
+@keyframes cambiarColor {
+	0%, 49% {
+		/* cualquier propiedad de css se puede cambiar acá adentro */
+		background-color: pink;
+	}
+	50%, 95% {
+		background-color: yellow;
+	}
+	100% {
+		background-color: orange;
+	} 
+	
+	/* una manera de hacerlo estado
+	
+	from {
+		background-color: red;
+	}
+	to {
+		background-color: blue;
+	} 
+	*/
+}
+
+.box {
+	width: 500px;
+	height: 500px;
+	
+	/* estas dos propiedades siempre juntas. Radius: redondea los 4 puntos del cuadrado */
+	border: 1px solid black;
+	/* border-radius: 790px 70px 10px 50px; */
+	border-radius: 50% 50% 50% 50%;
+	/* así hacés círculo. ojo que te sirve solo si tenés un cuadrado como base */
+	
+	
+	animation-name: cambiarColor;
+	animation-duration: 2s;
+	/* te deja la animación en el último frame que seteaste */
+	animation-fill-mode: forwards;
+	/* cantidad de veces que hace la animación. podés hacer que sea infinito con infinite */
+	animation-iteration-count: 5; 
+	animation-direction: reverse;
+	/* animation-direction: reverse (de 100% a 0% la animación)/ alternate (de 0% a 100% y de 100% a 0% la animación) */
+
+	
+}
+
+/* siempre los keyframes van de la mano de animation */
+
+
+.box2 {
+	background-color: pink;
+	height: 300px;
+	width: 300px;
+	animation-name: cambiarColor2;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	
+}
+
+
+@keyframes cambiarColor2 {
+/* no es necesario que setee el 0% porque toma el estado inicial */
+	 100% {
+		background-color: yellow;
+		width: 400px;
+		height: 200px;
+	}
+}
+
+
+.box:hover {
+	background-color: black;
+	/* animation-play-state: ??; para pausarlo */
+}
+
+.box3 {
+	background-color: red;
+	height: 500px;
+	width: 500px;
+	animation-name: cambiarColor3;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+.box3:hover {
+		
+}
+
+
+@keyframes cambiarColor3 {
+/* no es necesario que setee el 0% porque toma el estado inicial */
+	 100% {
+		background-color: green;
+		border: 1px solid black;
+		border-radius: 50% 50% 50% 50%;
+	}
+}
