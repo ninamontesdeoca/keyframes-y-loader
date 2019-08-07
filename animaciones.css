@@ -1,0 +1,12 @@
+/* stylesheet */
+body {
+    background-color: #222; 
+}
+
+iframe {
+    width: 2000px;
+    height: 800px;
+    /* elimino estilos predeterminados del iframe */
+    border: 0;
+    margin: 20px auto;
+}
